@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmcgcqwgnsw6l"]
+
+[ext_resource type="Script" path="res://examples/cube_world/src/Director.cs" id="1_um45h"]
+[ext_resource type="PackedScene" uid="uid://lqgp7hw1h0ib" path="res://examples/cube_world/cube.tscn" id="2_ikwlg"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gxtn8"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_tr0e7"]
+sky_material = SubResource("ProceduralSkyMaterial_gxtn8")
+
+[sub_resource type="Environment" id="Environment_hidqn"]
+background_mode = 2
+sky = SubResource("Sky_tr0e7")
+tonemap_mode = 2
+glow_enabled = true
+glow_levels/6 = 0.54
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_um45h")
+Template = ExtResource("2_ikwlg")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_hidqn")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.727342, 0.686275, 0, -0.686275, 0.727342, 0, 45.6571, 35.0162)
+
+[node name="cube" parent="." instance=ExtResource("2_ikwlg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4616, 36.4625, 31.5967)

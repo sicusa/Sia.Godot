@@ -1,2 +1,2 @@
 # Sia.Godot
-Godot examples using Sia.NET ECS library
+Godot examples using Sia.NET ECS framework

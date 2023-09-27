@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://lqgp7hw1h0ib"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bljjf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_537my"]
+emission_enabled = true
+emission = Color(0.764706, 0.529412, 0.796078, 1)
+
+[node name="cube" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_bljjf")
+surface_material_override/0 = SubResource("StandardMaterial3D_537my")
